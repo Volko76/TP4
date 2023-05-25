@@ -38,8 +38,10 @@ T_Position* ajouterPosition(T_Position* listeP, int ligne, int ordre, int phrase
 int ajouterOccurence(T_Index* index, char* mot, int ligne, int ordre, int phrase) {
     // Conversion en minuscules
     for (int i = 0; mot[i]; i++) {
-        mot[i] = tolower(mot[i]);
+        //mot[i] = tolower(mot[i]);
+        printf("%c", mot[i]);
     }
+    mot = tolower(mot);
 
     // Recherche du noeud correspondant dans l'ABR
     T_Noeud* n = index->racine;
@@ -107,6 +109,17 @@ int indexerFichier(T_Index* index, char* filename) {
     int nbMotsLus = 0;
     char mot[TAILLE_MAX_MOT];
     int ligne = 1, ordre = 1, phrase = 1;
+    char buff[255];
+
+    /*
+
+    for (int i = 0; i < 5; i++){
+        fscanf(fichier, "%s", buff);
+        printf("MOT : %s\n", buff);
+    }
+    printf("%s", fgets(mot, TAILLE_MAX_MOT, fichier));*/
+
+
     while (fgets(mot, TAILLE_MAX_MOT, fichier) != NULL) {
         char* ptr = mot;
         while (*ptr != '\0') {
@@ -115,6 +128,7 @@ int indexerFichier(T_Index* index, char* filename) {
                 *ptr = '\0';
                 if (strlen(mot) > 0) {
                     ajouterOccurence(index, mot, ligne, ordre, phrase);
+                    printf("ADDED");
                     nbMotsLus++;
                 }
                 mot[0] = '\0';

@@ -38,14 +38,14 @@ int main() {
                 afficherIndex(index);
                 break;
             case 3:
-                afficherIndex(index);
+                ajouterOccurence(&index, "teSt1 tesT3", 0, 0, 0);
                 break;
             case 4:
                 //rechercherMot(index);
                 break;
             case 5:{
                 char* s;
-                scanf("%s", &s);
+                scanf("%s", s);
                 afficherOccurencesMot(index, s);
                 break;
 
