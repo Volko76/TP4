@@ -82,3 +82,6 @@ void quitter(T_Index index) {
     //faire une sorte de free(index);
     printf("Au revoir !\n");
 }
+
+
+//bvfjdbvlbvglebgvelbgvelbgvle
