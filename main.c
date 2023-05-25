@@ -32,13 +32,12 @@ int main() {
                 printf("%s", s);
                 index.nbMotsTotal = indexerFichier(&index, s);
                 break;
-
             }
             case 2:
                 afficherIndex(index);
                 break;
             case 3:
-                ajouterOccurence(&index, "teSt1 tesT3", 0, 0, 0);
+                parcourir(index.racine);
                 break;
             case 4:
                 //rechercherMot(index);
@@ -48,7 +47,6 @@ int main() {
                 scanf("%s", s);
                 afficherOccurencesMot(index, s);
                 break;
-
             }
             case 6:
                 //construireTexte(index);

@@ -41,18 +41,21 @@ int ajouterOccurence(T_Index* index, char* mot, int ligne, int ordre, int phrase
         //mot[i] = tolower(mot[i]);
         printf("%c", mot[i]);
     }
-    mot = tolower(mot);
+    printf("|%s]", index->racine->mot);
+    //mot = tolower(mot);
 
     // Recherche du noeud correspondant dans l'ABR
     T_Noeud* n = index->racine;
     T_Noeud* parent = NULL;
     while (n != NULL) {
         int cmp = strcmp(mot, n->mot);
+        printf("%s | %s\n", mot, n->mot);
         if (cmp == 0) {
             // Le mot est déjà présent dans l'ABR
             n->nbOccurences++;
             n->listePositions = ajouterPosition(n->listePositions, ligne, ordre, phrase);
             index->nbMotsTotal++;
+            printf("On rajoute occu");
             return 1;
         } else if (cmp < 0) {
             // Le mot doit être cherché dans le sous-arbre gauche
@@ -68,6 +71,7 @@ int ajouterOccurence(T_Index* index, char* mot, int ligne, int ordre, int phrase
     // Le mot n'est pas encore présent dans l'ABR, on doitcréer un nouveau nœud pour l'insérer
     T_Noeud* nouveau = malloc(sizeof(T_Noeud));
     nouveau->mot = mot;
+    //printf(nouveau->mot);
     nouveau->nbOccurences = 1;
     nouveau->listePositions = NULL;
     nouveau->filsGauche = NULL;
