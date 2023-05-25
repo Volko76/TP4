@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1684963547 source:c:\users\volko\documents\codeblock\tp4\tp4\tp4.c
+	<stdio.h>
+	<stdlib.h>
+	"tp4.h"
+
+1684963174 c:\users\volko\documents\codeblock\tp4\tp4\tp4.h
+
+1684962004 source:c:\users\volko\documents\codeblock\tp4\tp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tp4.h"
+
+1684960965 c:\users\volko\documents\codeblock\tp4\tp4\tp4.c
+	<stdio.h>
+	<stdlib.h>
+	"tp4.h"
+
